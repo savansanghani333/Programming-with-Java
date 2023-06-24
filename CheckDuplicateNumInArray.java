@@ -1,3 +1,5 @@
+
+// Write a program to find whether the array contains a duplicate number or not.
 import java.util.Scanner;
 
 public class CheckDuplicateNumInArray {
@@ -11,14 +13,17 @@ public class CheckDuplicateNumInArray {
             a[i] = sc.nextInt();
         }
         boolean isDuplicate = false;
+        for (int i = 0; i < number - 1; i++) {
+            for (int j = i + 1; j <= number; j++) {
 
-        for (int i = 0; i <= number - 1; i++) {
-            for (int J = i + 1; i <= number; i++) {
-                if (a[i] == a[j]) {
-                    isDuplicate = true;
-                    break;
+                try {
+                    if (a[i] == a[j]) {
+                        isDuplicate = true;
+                        break;
+                    }
+                } catch (Exception e) {
+                    // TODO: handle exception
                 }
-
             }
             if (isDuplicate) {
                 break;
